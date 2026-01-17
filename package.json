@@ -1,14 +1,18 @@
 {
-  "name": "casino-bot",
+  "name": "ronz-bot",
   "version": "1.0.0",
+  "description": "بوت كازينو مع رصيد، متجر، وألعاب",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js"
   },
+  "author": "YourName",
+  "license": "MIT",
   "dependencies": {
-    "discord.js": "^14.14.0",
+    "discord.js": "^14.15.0",
     "sqlite": "^4.1.2",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.6",
+    "dotenv": "^16.3.1"
   }
 }
