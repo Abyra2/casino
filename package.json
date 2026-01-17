@@ -2,10 +2,9 @@
   "name": "ronz-bot",
   "version": "1.0.0",
   "description": "بوت كازينو مع رصيد، متجر، وألعاب",
-  "main": "index.js",
-  "type": "module",
+  "main": "index.cjs",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.cjs"
   },
   "author": "YourName",
   "license": "MIT",
