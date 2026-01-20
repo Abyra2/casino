@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, EmbedBuilder, SlashCommandBuilder, PermissionFlagsBits } = require("discord.js");
+const { Client, GatewayIntentBits, EmbedBuilder, PermissionFlagsBits } = require("discord.js");
 const db = require("./database");
 const config = require("./config");
 
@@ -11,7 +11,7 @@ const client = new Client({
 
 let announceChannel = null;
 
-// 🎯 عند دخول عضو
+// عند دخول عضو
 client.on("guildMemberAdd", async (member) => {
   const exists = db.prepare(
     "SELECT * FROM sinless WHERE user_id = ? AND guild_id = ?"
@@ -36,7 +36,7 @@ client.on("guildMemberAdd", async (member) => {
   announceChannel.send({ embeds: [embed] });
 });
 
-// ❌ سحب الرتبة (تايم / مخالفة)
+// سحب الرتبة (تايم / مخالفة)
 async function removeSinless(member) {
   const data = db.prepare(
     "SELECT * FROM sinless WHERE user_id = ? AND guild_id = ? AND status = 'active'"
@@ -61,7 +61,7 @@ async function removeSinless(member) {
   announceChannel.send({ embeds: [embed] });
 }
 
-// 🛠️ أمر تحديد روم الإعلان
+// أمر تحديد روم الإعلان
 client.on("interactionCreate", async (i) => {
   if (!i.isChatInputCommand()) return;
 
@@ -74,4 +74,4 @@ client.on("interactionCreate", async (i) => {
   }
 });
 
-client.login("TOKEN_HERE");
+client.login(process.env.TOKEN);
