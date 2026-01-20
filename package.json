@@ -1,2 +1,14 @@
-npm init -y
-npm install discord.js better-sqlite3
+{
+  "name": "ronz-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.13.0",
+    "better-sqlite3": "^8.0.0",
+    "dotenv": "^16.3.1"
+  }
+}
